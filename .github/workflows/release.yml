@@ -41,8 +41,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Automatically available in GitHub Actions
 
       # Upload the UMD bundles to the GitHub release
-      - name: Upload UMD bundles
-        uses: actions/upload-artifact@v2
-        with:
-          name: umd-bundles
-          path: umd
+      # - name: Upload UMD bundles
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: umd-bundles
+      #     path: umd
