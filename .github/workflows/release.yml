@@ -42,7 +42,7 @@ jobs:
 
       # Upload the UMD bundles to the GitHub release
       - name: Upload UMD bundles
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: umd
           path: umd
