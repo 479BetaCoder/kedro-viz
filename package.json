@@ -1,6 +1,6 @@
 {
-  "name": "@quantumblack/kedro-viz",
-  "version": "10.1.0",
+  "name": "@ravikumarpilla/kedro-viz",
+  "version": "1.0.3",
   "description": "Kedro-Viz is an interactive development tool for building data science pipelines with Kedro.",
   "main": "lib/components/app/index.js",
   "files": [
@@ -9,7 +9,7 @@
   "homepage": ".",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kedro-org/kedro-viz.git"
+    "url": "git+https://github.com/479BetaCoder/kedro-viz.git"
   },
   "proxy": "http://localhost:4142/",
   "scripts": {
@@ -23,6 +23,7 @@
     "lib:clean": "rm -rf lib",
     "lib:copy": "cp -rf src lib",
     "lib:webpack": "webpack --config webpack.lib.js",
+    "lib:umd": "webpack --config webpack.umd.js",
     "lib:babel": "BABEL_ENV=lib babel lib --out-dir lib --ignore lib/umd",
     "lib:prune": "find lib -type f -name '*.test.*' -delete && find lib -type f -name '*.scss' -delete && find lib/components -type f -name '*.css' -delete && find lib/styles -type f -name '*.js' -delete",
     "lib-test": "npm-run-all -s lib lib-test:setup lib-test:serve",
@@ -171,5 +172,13 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "snyk": true
+  "snyk": true,
+  "bugs": {
+    "url": "https://github.com/479BetaCoder/kedro-viz/issues"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "author": "Ravi Kumar Pilla",
+  "license": "ISC"
 }
