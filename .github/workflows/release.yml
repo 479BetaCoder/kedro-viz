@@ -32,10 +32,10 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref }}
-          name: ${{ github.ref }}
+          tag_name: "v1.0.0"
+          name: "v1.0.0"
           body: |
-            Release of version ${{ github.ref }}.
+            Release of version v1.0.0
             This release includes the UMD bundle and other assets.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Automatically available in GitHub Actions
