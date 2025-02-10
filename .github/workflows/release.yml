@@ -1,4 +1,4 @@
-name: Release UMD Bundle
+name: Release ESM Bundle
 
 on:
   push:
@@ -24,19 +24,21 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Build the UMD bundle (modify your build command here)
-      - name: Build UMD bundle
-        run: npm run lib:umd # or whatever your build script is
+      # Build the ESM bundle (modify your build command here)
+      - name: Build ESM bundle
+        run: npm run build:esm # or whatever your build script is
 
       # Create GitHub Release and upload assets
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          files: "**"
-          tag_name: "v1.0.2"
-          name: "v1.0.2"
+          files: |
+            esm/kedro-viz.production.mjs
+            esm/*.worker.js
+          tag_name: "v1.0.3"
+          name: "v1.0.3"
           body: |
-            Release of version v1.0.2
-            This release includes the UMD bundle and other assets.
+            Release of version v1.0.3
+            This release includes the ESM bundle and other assets.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Automatically available in GitHub Actions
