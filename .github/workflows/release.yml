@@ -32,11 +32,13 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          files: "**"
-          tag_name: "v1.0.2"
-          name: "v1.0.2"
+          files: |
+            esm/kedro-viz.production.mjs
+            esm/*.worker.js
+          tag_name: "v1.0.3"
+          name: "v1.0.3"
           body: |
-            Release of version v1.0.2
+            Release of version v1.0.3
             This release includes the UMD bundle and other assets.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Automatically available in GitHub Actions
