@@ -32,17 +32,11 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: "v1.0.1"
-          name: "v1.0.1"
+          files: "**"
+          tag_name: "v1.0.2"
+          name: "v1.0.2"
           body: |
-            Release of version v1.0.1
+            Release of version v1.0.2
             This release includes the UMD bundle and other assets.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Automatically available in GitHub Actions
-
-      # Upload the UMD bundles to the GitHub release
-      - name: Upload UMD bundles
-        uses: actions/upload-artifact@v4
-        with:
-          name: umd
-          path: umd
